@@ -1,0 +1,76 @@
+/* CAPTCHA — Theme System */
+:root {
+  --bg-deep: #0d0e0f;
+  --bg-mid: #1a1c1e;
+  --bg-surface: #242628;
+  --paint-amber: #c8893a;
+  --paint-rust: #8b3a2a;
+  --paint-fog: #8fa3a8;
+  --paint-bone: #d4c9b0;
+  --paint-moss: #4a5c3e;
+  --accent-pulse: #e8c96e;
+  --text-primary: #d4c9b0;
+  --text-dim: #7a7568;
+  --text-danger: #c44a2a;
+  --text-human: #6aab7a;
+  --text-ai: #7a5aab;
+  --ui-border: rgba(200, 137, 58, 0.25);
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Crimson Pro', serif;
+  --font-ui: 'Share Tech Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Grain overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+}
+
+button {
+  font-family: var(--font-ui);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: inherit;
+}
+
+/* Paranoia distortion */
+body.paranoia-low { --paranoia-filter: none; }
+body.paranoia-mid { --paranoia-filter: hue-rotate(4deg) saturate(1.05); }
+body.paranoia-high {
+  --paranoia-filter: hue-rotate(10deg) saturate(1.15) contrast(1.05);
+  animation: paranoia-shake 0.3s ease-in-out infinite alternate;
+}
+
+@keyframes paranoia-shake {
+  from { transform: translateX(-1px); }
+  to { transform: translateX(1px); }
+}
