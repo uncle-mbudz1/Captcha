@@ -158,7 +158,7 @@ export const HUMAN_ENCOUNTERS = {
   },
 };
 
-// Vale's observation narrations per encounter — [zoneId][encounterIndex]
+// Shoo's observation narrations per encounter — [zoneId][encounterIndex]
 export const OBSERVATION_NARRATIONS = {
   1: {
     0: [

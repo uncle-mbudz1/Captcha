@@ -27,7 +27,7 @@ export default function ObservationPhase({
     <div className="observation-phase-text">
       {!choiceMode ? (
         <div className="obs-monologue">
-          <p className="obs-header">Vale observes.</p>
+          <p className="obs-header">Shoo observes.</p>
           {revealed.map((obs, i) => (
             <p key={i} className="obs-line obs-reveal">
               {obs.text}

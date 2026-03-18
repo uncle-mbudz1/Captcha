@@ -30,7 +30,7 @@ export default function InstructionManual({ onClose }) {
         </h1>
         <p style={{ borderBottom: '1px solid var(--ui-border)', paddingBottom: '1rem', marginBottom: '1.5rem' }} />
         <p style={{ fontFamily: 'var(--font-body)', color: 'var(--text-dim)', fontStyle: 'italic', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-          &quot;You are Vale. A linguist. The last confirmed human you know of.
+          &quot;You are Shoo. A linguist. The last confirmed human you know of.
           Somewhere out there, others survive. You are looking for them.
           The world is full of figures that look human. Most are not.&quot;
         </p>

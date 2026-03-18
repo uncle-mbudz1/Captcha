@@ -1,7 +1,7 @@
 const STORAGE_KEY = 'captcha_game_state';
 
 const DEFAULT_STATE = {
-  playerName: 'Vale',
+  playerName: 'Shoo',
   currentZone: 1,
   currentEncounter: 0,
   health: 3,
