@@ -74,3 +74,13 @@ body.paranoia-high {
   from { transform: translateX(-1px); }
   to { transform: translateX(1px); }
 }
+
+/* Mobile: safe area and overflow prevention */
+html {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  overflow-x: hidden;
+}

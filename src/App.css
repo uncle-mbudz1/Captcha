@@ -3,13 +3,17 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
   background: var(--bg-deep);
+  overflow-x: hidden;
 }
 
 .game-main {
   flex: 1;
   position: relative;
   overflow: hidden;
+  min-height: 0;
   filter: var(--paranoia-filter, none);
   transition: filter 1s ease;
 }
@@ -843,4 +847,282 @@
 
 .logs-empty {
   margin-bottom: 1rem;
+}
+
+/* ========== Mobile responsive ========== */
+@media (max-width: 768px) {
+  .hud {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .hud-left,
+  .hud-center,
+  .hud-right {
+    gap: 0.5rem;
+  }
+
+  .hud-center {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hud-right {
+    flex-wrap: wrap;
+  }
+
+  .hud-name {
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .hud-btn {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .zone-view {
+    padding: 1rem;
+  }
+
+  .zone-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .zone-info p {
+    margin-bottom: 1.5rem;
+  }
+
+  .zone-encounter-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .scene-narration {
+    padding: 1rem 1rem 1.5rem;
+  }
+
+  .scene-narration-text {
+    font-size: 0.95rem;
+  }
+
+  .observation-phase-text {
+    padding: 1rem;
+    max-height: 60%;
+  }
+
+  .obs-header,
+  .obs-subheader {
+    font-size: 0.7rem;
+  }
+
+  .obs-line {
+    font-size: 0.9rem;
+  }
+
+  .obs-option-btn {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .interrogation-phase {
+    max-height: 50%;
+  }
+
+  .interrogation-dialogue {
+    padding: 1rem;
+  }
+
+  .question-categories {
+    gap: 0.4rem;
+  }
+
+  .question-btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .verdict-phase {
+    bottom: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    transform: none;
+    padding: 0 0.5rem;
+  }
+
+  .verdict-prompt {
+    font-size: 1rem;
+  }
+
+  .verdict-gut {
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .verdict-options {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .verdict-btn {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .consequence-phase {
+    padding: 1rem;
+  }
+
+  .consequence-text {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .consequence-continue {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .phase-advance {
+    bottom: 0.5rem;
+    right: 0.5rem;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .skill-notice-stack {
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 4rem;
+    max-width: none;
+  }
+
+  .skill-notice {
+    max-width: none;
+  }
+
+  .skill-tree-modal {
+    margin: 1rem;
+    padding: 1rem;
+    max-height: 85vh;
+  }
+
+  .skill-tree-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .skill-tree-title {
+    font-size: 1.25rem;
+  }
+
+  .title-main {
+    font-size: 2rem;
+    letter-spacing: 0.15em;
+  }
+
+  .title-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .title-quote {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .title-text {
+    padding: 1rem;
+  }
+
+  .title-start {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .title-manual {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .zone-transition-content {
+    padding: 1rem;
+  }
+
+  .zone-transition-title {
+    font-size: 1.5rem;
+  }
+
+  .zone-transition-text {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .zone-transition-btn {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .ending-quote {
+    font-size: 1.4rem;
+  }
+
+  .ending-text {
+    padding: 1rem;
+  }
+
+  .instruction-manual {
+    max-width: calc(100% - 2rem) !important;
+    margin: 1rem;
+    padding: 1.5rem !important;
+  }
+
+  .map-modal {
+    margin: 1rem;
+    padding: 1rem !important;
+    max-width: calc(100% - 2rem) !important;
+  }
+
+  .map-svg {
+    height: auto !important;
+    min-height: 180px;
+  }
+
+  .logs-modal {
+    margin: 1rem;
+    padding: 1rem !important;
+    max-width: calc(100% - 2rem) !important;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .hud-zone {
+    font-size: 0.65rem;
+  }
+
+  .hud-day {
+    font-size: 0.65rem;
+  }
+
+  .title-main {
+    font-size: 1.6rem;
+    letter-spacing: 0.08em;
+  }
+
+  .verdict-btn {
+    font-size: 0.8rem;
+  }
+
+  .instruction-manual {
+    max-width: calc(100% - 1rem) !important;
+    margin: 0.5rem;
+    padding: 1rem !important;
+  }
 }
